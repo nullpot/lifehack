@@ -16,5 +16,22 @@
 </head>
 <body>
 
+<script type="text/javascript">
+	if (navigator.geolocation) {
+		// 現在の位置情報取得を実施
+		navigator.geolocation.getCurrentPosition(
+			// 位置情報取得成功時
+			function (pos) {
+				console.log("lat : "+pos.coords.latitude);
+				console.log("lng : "+pos.coords.longitude);
+			},
+			// 位置情報取得失敗時
+			function (pos) {
+				console.log(位置情報が取得できませんでした");
+			});
+	} else {
+		console.log("Geolocationが使えません");
+	}
+</script>
 </body>
 </html>
